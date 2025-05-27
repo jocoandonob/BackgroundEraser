@@ -1,6 +1,6 @@
 # BackgroundEraser
 
-This project is designed to remove backgrounds from images.
+This project is a Streamlit app designed to remove backgrounds from images.
 
 ## Prerequisites
 
@@ -29,17 +29,17 @@ This project is designed to remove backgrounds from images.
 ## Usage
 
 1. Place your images in the `input` directory.
-2. Run the script:
+2. Run the Streamlit app:
    ```bash
-   python main.py
+   streamlit run app.py
    ```
-3. The processed images will be saved in the `output` directory.
+3. The app will open in your default web browser, where you can upload images and process them.
 
 ## Example
 
 ```bash
-# Example command to process a single image
-python main.py --input input/image.jpg --output output/processed_image.jpg
+# Example command to run the Streamlit app
+streamlit run app.py
 ```
 
 ## License
