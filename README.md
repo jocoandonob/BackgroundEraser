@@ -1,5 +1,7 @@
 # BackgroundEraser
 
+![BackgroundEraser Thumbnail](thumbnail.png)
+
 This project is a Streamlit app designed to remove backgrounds from images.
 
 ## Prerequisites
