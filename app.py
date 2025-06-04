@@ -8,10 +8,15 @@ import zipfile
 import time
 import traceback
 import logging
+import torch
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Determine device
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
+logger.info(f"Using device: {DEVICE}")
 
 # Configure page
 st.set_page_config(
@@ -31,8 +36,8 @@ def remove_background(image):
         img_byte_arr = img_byte_arr.getvalue()
         
         # Remove background
-        logger.info("Calling rembg.remove")
-        output = remove(img_byte_arr)
+        logger.info(f"Calling rembg.remove with device: {DEVICE}")
+        output = remove(img_byte_arr, device=DEVICE)
         
         # Convert back to PIL Image
         result_image = Image.open(io.BytesIO(output))
